@@ -1,0 +1,5 @@
+# Дополнение к имеющемуся docker-compose.yml: открыть каталог датасета только в backend.
+services:
+  backend:
+    volumes:
+      - ./data:/app/data

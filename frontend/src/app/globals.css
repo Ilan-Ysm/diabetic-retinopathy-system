@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Golos Text Variable", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+
+  --color-canvas: #f2f6f9;
+  --color-surface: #ffffff;
+  --color-ink: #0f2a3d;
+  --color-muted: #52687a;
+  --color-line: #d5e1e9;
+  --color-primary: #0e6ba8;
+  --color-primary-strong: #0a5687;
+  --color-primary-soft: #e3eef9;
+  --color-teal: #0b8a8a;
+  --color-teal-soft: #dff3f2;
+  --color-film: #060c11;
+  --color-danger: #b3261e;
+}
+
+@layer base {
+  body {
+    @apply bg-canvas text-ink antialiased;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-[10px] px-4 py-2.5 text-sm font-semibold transition-colors disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-strong;
+  }
+
+  .btn-secondary {
+    @apply border border-line bg-surface text-ink hover:border-primary hover:text-primary;
+  }
+
+  .btn-danger {
+    @apply border border-danger/40 bg-surface text-danger hover:bg-danger hover:text-white;
+  }
+
+  .field {
+    @apply mt-1.5 block w-full rounded-[10px] border border-line bg-surface px-3 py-2.5 text-ink placeholder:text-muted/70 focus:border-primary;
+  }
+
+  .panel {
+    @apply rounded-2xl border border-line bg-surface;
+  }
+
+  .page-title {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+}
